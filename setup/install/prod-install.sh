@@ -24,7 +24,7 @@ echo "======================================"
 echo ""
 cat ~/.ssh/id_ed25519.pub
 echo ""
-echo "Go to: GitHub → Settings → SSH and GPG keys → New SSH key"
+echo "Go to: GitHub → Settings → Deploy Keys → Add deploy key"
 echo "Paste the key above and save it."
 echo ""
 read -p "Press Enter after you've added the key to GitHub..."
@@ -73,9 +73,9 @@ sudo cp $INSTALL_PATH/setup/systemd/*.service /etc/systemd/system/
 sudo systemctl daemon-reload
 sudo systemctl enable va-controller bs-controller kiosk-server cleanup-logs
 
-# Step 7: Setup autostart
+# Step 7: Setup autostart (Chromium kiosk)
 echo ""
-echo "[7/8] Setting up Chromium autostart..."
+echo "[7/8] Setting up autostart..."
 mkdir -p ~/.config/autostart
 cp $INSTALL_PATH/setup/autostart/*.desktop ~/.config/autostart/
 
